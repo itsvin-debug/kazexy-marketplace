@@ -60,6 +60,10 @@ putenv('LOG_CHANNEL=stderr');
 $_ENV['LOG_CHANNEL'] = 'stderr';
 $_SERVER['LOG_CHANNEL'] = 'stderr';
 
+putenv('APP_MAINTENANCE_DRIVER=file');
+$_ENV['APP_MAINTENANCE_DRIVER'] = 'file';
+$_SERVER['APP_MAINTENANCE_DRIVER'] = 'file';
+
 // 5. Setup SQLite database di /tmp
 $tmpDb = '/tmp/database.sqlite';
 if (!file_exists($tmpDb)) {
