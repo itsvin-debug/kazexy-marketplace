@@ -1,1 +1,3 @@
-*.sqlite*
+# Keep database.sqlite for serverless initialization
+!database.sqlite
+*.sqlite-journal
