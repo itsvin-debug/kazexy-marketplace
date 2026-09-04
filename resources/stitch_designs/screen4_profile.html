@@ -1,0 +1,492 @@
+<!DOCTYPE html><html lang="id" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Akun Profil - Nexus Gaming</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#3f465c",
+                    "secondary-container": "#8455ef",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-secondary-container": "#fffbff",
+                    "on-primary-container": "#90a8ff",
+                    "on-primary-fixed": "#00164e",
+                    "error-container": "#ffdad6",
+                    "secondary": "#6b38d4",
+                    "tertiary-fixed": "#dae2fd",
+                    "on-tertiary-container": "#a4acc5",
+                    "on-secondary-fixed-variant": "#5516be",
+                    "secondary-fixed-dim": "#d0bcff",
+                    "inverse-primary": "#b6c4ff",
+                    "on-background": "#191c1e",
+                    "tertiary": "#222a3e",
+                    "secondary-fixed": "#e9ddff",
+                    "surface-bright": "#f7f9fb",
+                    "surface": "#f7f9fb",
+                    "outline-variant": "#c5c5d3",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-tint": "#4059aa",
+                    "inverse-surface": "#2d3133",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-surface": "#191c1e",
+                    "on-surface-variant": "#444651",
+                    "on-tertiary-fixed": "#131b2e",
+                    "surface-dim": "#d8dadc",
+                    "primary-fixed": "#dce1ff",
+                    "on-primary": "#ffffff",
+                    "tertiary-container": "#384055",
+                    "surface-container": "#eceef0",
+                    "background": "#f7f9fb",
+                    "on-secondary-fixed": "#23005c",
+                    "primary-container": "#1e3a8a",
+                    "surface-variant": "#e0e3e5",
+                    "on-secondary": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "error": "#ba1a1a",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#264191",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed-dim": "#bec6e0",
+                    "on-error-container": "#93000a",
+                    "primary": "#00236f",
+                    "outline": "#757682",
+                    "surface-container-lowest": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px",
+                    "2xl": "1.5rem",
+                    "3xl": "2rem"
+            },
+            "spacing": {
+                    "stack-lg": "24px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "16px",
+                    "stack-sm": "4px",
+                    "base": "8px",
+                    "margin-desktop": "40px",
+                    "stack-md": "12px",
+                    "18": "4.5rem",
+                    "22": "5.5rem"
+            },
+            "fontFamily": {
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "label-bold": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Inter"
+                    ],
+                    "body-sm": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Inter"
+                    ],
+                    "headline-sm": [
+                            "Inter"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "display-lg-mobile": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-bold": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "body-sm": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-sm": [
+                            "20px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "800"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill-icon {
+          font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom scrollbar for horizontal scrolling elements */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .ambient-shadow-sm {
+            box-shadow: 0 4px 15px -3px rgba(0, 35, 111, 0.05), 0 4px 6px -4px rgba(0, 35, 111, 0.05);
+        }
+        .ambient-shadow-md {
+            box-shadow: 0 10px 25px -5px rgba(0, 35, 111, 0.08), 0 8px 10px -6px rgba(0, 35, 111, 0.05);
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col md:flex-row antialiased overflow-x-hidden">
+<!-- Mobile Nav Spacer (Hidden on Desktop) -->
+<div class="h-20 md:hidden w-full bg-surface shadow-sm sticky top-0 z-40 flex items-center px-margin-mobile justify-between">
+<h1 class="font-headline-md text-headline-md font-black text-primary">Nexus Gaming</h1>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors" data-icon="shopping_cart">shopping_cart</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:text-secondary transition-colors" data-icon="notifications">notifications</span>
+</div>
+</div>
+<!-- Sidebar (Desktop) -->
+<aside class="hidden md:flex flex-col gap-stack-md py-stack-lg border-r border-outline-variant/20 h-screen w-64 fixed left-0 top-0 bg-surface-container shadow-md z-50">
+<div class="px-6 mb-8 flex items-center gap-4">
+<img alt="Gaming Profile Avatar" class="w-12 h-12 rounded-full border-2 border-primary object-cover" data-alt="A clean, minimalist 3D rendering of a gaming profile avatar icon. A stylized helmet or visor in pristine white and electric blue tones against a solid dark background. Professional lighting, high resolution, modern gaming aesthetic, subtle glowing accents. No text." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1f_6ffWY3KOLVaUZgxDl-1QZrVFXrGlUSb3ZzeyWQuLZlsNfEotnn2dkoYUZdWPpCcM5JYFU_pBwZ4SVfhVKi-HJ3TBAQ7a5O85JxHgo_YIEX-nF8A45jdfC_63yWes0H9rX1l8LAW_K6mPClFYIXA3tGgVOBjl68EBrjF9ruWnvQNJpF-Rlt8Eb8vF4H-BM0VpAoS5Gn4r3C0C4k1jD0ljlARBh4YH6GMjJYvD886QCMIGPUO0u0">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Halo, Gamers!</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Level 24 Member</p>
+</div>
+</div>
+<nav class="flex-1 px-4 flex flex-col gap-2">
+<a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-highest transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-md text-label-md">Favorit</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-highest transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-label-md">Transaksi</span>
+</a><div class="text-on-surface-variant/40 flex items-center justify-between px-4 py-3 rounded-xl cursor-not-allowed">
+  <div class="flex items-center gap-3">
+    <span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+    <span class="font-label-md text-label-md">Toko Saya</span>
+  </div>
+  <span class="material-symbols-outlined text-[18px]" data-icon="lock">lock</span>
+</div>
+<a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-highest transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-label-md text-label-md">Bantuan</span>
+</a>
+<a class="bg-secondary-container text-on-secondary-container rounded-xl flex items-center gap-3 px-4 py-3 transition-all active:scale-98 font-bold" href="#">
+<span class="material-symbols-outlined fill-icon" data-icon="person">person</span>
+<span class="font-label-md text-label-md">Akun</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full bg-primary text-on-primary py-3 rounded-lg font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm font-bold active:scale-95 duration-150">
+                Upgrade VIP
+            </button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 flex flex-col relative w-full pb-24 md:pb-0">
+<!-- Top App Bar (Desktop) -->
+<header class="hidden md:flex justify-between items-center w-full px-margin-desktop h-20 bg-surface shadow-sm sticky top-0 z-40">
+<div class="flex items-center gap-6">
+<h1 class="font-headline-md text-headline-md font-black text-primary mr-8">Nexus Gaming</h1>
+<nav class="flex gap-6">
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-colors" href="#">Promo</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-colors" href="#">Terbaru</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-colors" href="#">Flash Sale</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
+<input class="pl-10 pr-4 py-2 rounded-full border border-outline-variant bg-surface-container-low text-body-sm font-body-sm focus:border-primary focus:ring-1 focus:ring-primary w-64 transition-all" placeholder="Cari item..." type="text">
+</div>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<img class="w-10 h-10 rounded-full ml-4 border-2 border-transparent hover:border-secondary transition-colors cursor-pointer object-cover" data-alt="User Profile Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0bOr-T3DTDpNDfP8b_ADgv6KEKyVCBsj18_s00HsweBPRFOAY7aq4OrvpID3s7_cujy7LcENWhOSCE6GvhSvXVioAmc6b8MbsFEjEVt4yoROWZJBBagx5QLuEhl19Casn03GWrMHwq2EY0_wh4wDrBIrOu5hvkDnAzZ-rtqEE6s5McTt_R9fUsl6PAelIscMAmXdlVyjydNvG5-Vq1gfOan41RUO9TAuE0Zcf455zzPPCzRHKCpzU">
+</div>
+</header>
+<div class="w-full max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop py-stack-lg flex-1">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-stack-lg font-bold">Akun Saya</h2>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Profile & Activity -->
+<div class="lg:col-span-8 flex flex-col gap-stack-lg">
+<!-- User Profile Bento Card -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 md:p-8 ambient-shadow-sm border border-outline-variant/10 relative overflow-hidden group hover:ambient-shadow-md transition-shadow duration-300">
+<!-- Abstract decorative background element -->
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-500"></div>
+<div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 relative z-10">
+<div class="relative">
+<img alt="Alex Neon Hunter Profile" class="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl object-cover shadow-sm border-4 border-surface" data-alt="A high-quality 3D rendered avatar of a modern gamer. A sleek, metallic cyberpunk-style character helmet with glowing electric blue accents against a pristine white studio background. Professional lighting, crisp details, soft ambient shadows. Minimalist and premium look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHxussYHIx0Bg_BI2rugPJZlCpT48ax2g2t5TgaPSIUmuWxl_YikOwya5lPdF8lmyLBRdOfhmhRN0cTqCvCodwclkBpM0n6txWTnByzckoL8sA3KT75eM_s2009CrU4Ud14Ues-cIGN9S01DG5rxMmpNzDQxPH79eM4tzJNN0vTjgqrflFHkRgrXPM_sRe8_jZ4bpw2dBJ-c-gjjm9qYGEn0JAdmxh__71h6dzTc_6AHQuIoZVVHvs">
+<div class="absolute -bottom-2 -right-2 bg-secondary text-white p-1.5 rounded-lg shadow-sm border-2 border-surface" title="Verified Gamer">
+<span class="material-symbols-outlined text-[18px] fill-icon" data-icon="verified">verified</span>
+</div>
+</div>
+<div class="flex-1 text-center sm:text-left">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mb-1">Alex 'Neon' Hunter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">alex.neon@example.com</p>
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary rounded-full font-label-md text-label-md font-bold mb-4">
+<span class="material-symbols-outlined text-[16px]" data-icon="sports_esports">sports_esports</span>
+                                    Verified Gamer
+                                </div>
+<div class="flex flex-wrap justify-center sm:justify-start gap-3 mt-2">
+<button class="px-4 py-2 bg-surface-container-high text-on-surface rounded-lg font-label-md text-label-md hover:bg-surface-container-highest transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="edit">edit</span>
+                                        Edit Profil
+                                     </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Activity Tracker -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 md:p-8 ambient-shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline-sm text-[18px] text-on-surface font-bold">Status Pesanan</h3>
+<a class="text-primary font-label-md text-label-md hover:underline flex items-center" href="#">Lihat Semua <span class="material-symbols-outlined text-[16px] ml-1" data-icon="chevron_right">chevron_right</span></a>
+</div>
+<div class="grid grid-cols-4 gap-2 sm:gap-4">
+<!-- Status 1 -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="w-12 h-12 sm:w-14 sm:h-14 bg-surface-container rounded-2xl flex items-center justify-center mb-2 group-hover:bg-primary/10 group-hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined text-[24px] sm:text-[28px] text-on-surface-variant group-hover:text-primary transition-colors" data-icon="account_balance_wallet">account_balance_wallet</span>
+<!-- Badge -->
+<div class="absolute -top-1 -right-1 w-5 h-5 bg-error text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-surface">2</div>
+</div>
+<span class="font-label-md text-[10px] sm:text-xs text-on-surface-variant group-hover:text-primary transition-colors line-clamp-2 px-1">Menunggu<br>Pembayaran</span>
+</div>
+<!-- Status 2 -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="w-12 h-12 sm:w-14 sm:h-14 bg-surface-container rounded-2xl flex items-center justify-center mb-2 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px] sm:text-[28px] text-on-surface-variant group-hover:text-primary transition-colors" data-icon="inventory_2">inventory_2</span>
+</div>
+<span class="font-label-md text-[10px] sm:text-xs text-on-surface-variant group-hover:text-primary transition-colors line-clamp-2 px-1">Menunggu<br>Dikirim</span>
+</div>
+<!-- Status 3 -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="w-12 h-12 sm:w-14 sm:h-14 bg-surface-container rounded-2xl flex items-center justify-center mb-2 group-hover:bg-primary/10 group-hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined text-[24px] sm:text-[28px] text-on-surface-variant group-hover:text-primary transition-colors" data-icon="local_shipping">local_shipping</span>
+<div class="absolute -top-1 -right-1 w-5 h-5 bg-primary text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-surface">1</div>
+</div>
+<span class="font-label-md text-[10px] sm:text-xs text-on-surface-variant group-hover:text-primary transition-colors line-clamp-2 px-1">Sedang<br>Dikirim</span>
+</div>
+<!-- Status 4 -->
+<div class="flex flex-col items-center text-center group cursor-pointer">
+<div class="w-12 h-12 sm:w-14 sm:h-14 bg-surface-container rounded-2xl flex items-center justify-center mb-2 group-hover:bg-primary/10 group-hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[24px] sm:text-[28px] text-on-surface-variant group-hover:text-primary transition-colors" data-icon="check_circle">check_circle</span>
+</div>
+<span class="font-label-md text-[10px] sm:text-xs text-on-surface-variant group-hover:text-primary transition-colors line-clamp-2 px-1">Selesai</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Payments & CTA -->
+<div class="flex flex-col gap-stack-lg lg:col-span-12"><!-- Payment Methods -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 ambient-shadow-sm border border-outline-variant/10 mb-stack-lg">
+<h3 class="font-headline-sm text-[18px] text-on-surface font-bold mb-4">Metode Pembayaran</h3>
+<div class="flex flex-col gap-3">
+<!-- DANA -->
+<div class="flex items-center justify-between p-3 rounded-xl border border-outline-variant/30 hover:border-primary/50 transition-colors cursor-pointer bg-surface/50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-white rounded-lg shadow-sm border border-outline-variant/10 flex items-center justify-center p-1">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCORRtsQhB9apSKPZAeTnjHFMYMVLu_fjbN5bZ26A-om1LSiHAThgJaVaGfPG_GCc92jtObEqlbLqIrObBcyRNI8VO-h1MK8OJfaaqMfamG1PpASWTyxqJxo0ThC7TmvIZegSFLZ7LdQZ4Z3rLJMuYz_-XdamA-WId6OGgXG-GLJvfNV5QR6CdzTgd2piqAAIek5KFNHOp5-5-74Zj9IEWod3k2V2tbUZm8f-8FL5mcmHT9_zjwfy2m')"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">DANA</span>
+</div>
+<span class="text-[10px] font-bold px-2 py-1 bg-surface-container-high text-on-surface-variant rounded-md">Hubungkan</span>
+</div>
+<!-- OVO -->
+<div class="flex items-center justify-between p-3 rounded-xl border border-outline-variant/30 hover:border-primary/50 transition-colors cursor-pointer bg-surface/50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-white rounded-lg shadow-sm border border-outline-variant/10 flex items-center justify-center p-1">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBGaeJbUprwjclmePDR0zZEmfWL6bld7QZ_w6dYvVPbrbl8yjJKt8vDBSnOLolIb2j2lvB9O6tKV_c-OujycXwWREzWMGYnAkUq0puu1oRyeVLVjUrSietv5CPxSCiQ-8A8cfMzvwmdkTFgtsAqzAPx_IKKGyNZD17zLXAYiPpKEzd6fXDyxD-1yhAFFtDy9qM3EVfQ-knBdgepdirD8LXafISSi4BDgUR-kszcqE1NJdYVvTz87Jxh')"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">OVO</span>
+</div>
+<span class="text-[10px] font-bold px-2 py-1 bg-primary/10 text-primary rounded-md">Terhubung</span>
+</div>
+<!-- GoPay -->
+<div class="flex items-center justify-between p-3 rounded-xl border border-outline-variant/30 hover:border-primary/50 transition-colors cursor-pointer bg-surface/50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-white rounded-lg shadow-sm border border-outline-variant/10 flex items-center justify-center p-1">
+<div class="w-full h-full bg-contain bg-center bg-no-repeat" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkSJ-VYOGyjOd37dsBgTjMrAkNCJEHg0PcTmR4IL0fR79Gv_wtWxlqYZmS4rM0Ix2XzJfoTh8mj5bqPLlRW9s1jMWjvyx-rSGTOXZUydiU_XmsEI_K-Ie9_f92XwryU9cOmIyj0XgAbmnjzCxfgqbJ6BYRIf8BzJIZ58UdH-amngR22o_RQDSFfJYLHNdTNMcUwbnn7WstLTK0RJAUXjk2wjOb4o21EQbg27GuW_bjnNdfd-0AlflO')"></div>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">GoPay</span>
+</div>
+<span class="text-[10px] font-bold px-2 py-1 bg-surface-container-high text-on-surface-variant rounded-md">Hubungkan</span>
+</div>
+<!-- Bank -->
+<div class="flex items-center justify-between p-3 rounded-xl border border-outline-variant/30 hover:border-primary/50 transition-colors cursor-pointer bg-surface/50">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-surface-container rounded-lg flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface font-bold">Transfer Bank</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[20px]" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+
+<div class="flex flex-col md:flex-row gap-gutter">
+  <!-- Seller Conversion Banner -->
+  <div class="flex-1 rounded-3xl p-6 bg-gradient-to-br from-secondary to-primary-container text-white relative overflow-hidden ambient-shadow-md group">
+    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 80% 20%, rgba(255,255,255,0.8) 0%, transparent 50%);"></div>
+    <div class="absolute -right-4 -bottom-4 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-colors duration-500"></div>
+    <div class="relative z-10 flex flex-col h-full justify-between gap-4">
+      <div>
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center mb-4 backdrop-blur-sm border border-white/30">
+          <span class="material-symbols-outlined text-[28px] text-white" data-icon="storefront">storefront</span>
+        </div>
+        <h3 class="font-headline-sm text-headline-sm font-bold mb-2">Buka Toko Gratis</h3>
+        <p class="font-body-sm text-body-sm text-white/80 leading-relaxed mb-6">Mulai berjualan item game favoritmu sekarang dan raih jutaan rupiah!</p>
+      </div>
+      <button class="w-full bg-white text-secondary py-3 rounded-xl font-label-md text-label-md font-bold hover:bg-surface-bright transition-colors shadow-sm active:scale-95 duration-150">
+        Daftar Sekarang
+      </button>
+    </div>
+  </div>
+
+  <!-- Help Center Card -->
+  <div class="flex-1 bg-surface-container-lowest rounded-3xl p-6 ambient-shadow-sm border border-outline-variant/10 flex flex-col gap-4">
+    <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+      <span class="material-symbols-outlined text-[28px]" data-icon="support_agent">support_agent</span>
+    </div>
+    <div>
+      <h3 class="font-headline-sm text-[18px] text-on-surface font-bold mb-2">Pusat Bantuan</h3>
+      <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Butuh bantuan atau punya kendala? Hubungi tim admin kami yang siap membantu Anda 24/7.</p>
+    </div>
+    <button onclick="document.getElementById('admin-chat-popup').classList.remove('hidden')" class="w-full bg-primary text-on-primary py-3 rounded-xl font-label-md text-label-md font-bold hover:bg-primary-container transition-colors shadow-sm active:scale-95 duration-150">
+      Hubungi Admin
+    </button>
+  </div>
+</div></div>
+</div>
+</div>
+</main>
+<!-- Mobile Bottom Navigation (Visible only on mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface shadow-[0_-2px_10px_rgba(0,0,0,0.05)] flex justify-around items-center h-16 pb-safe z-50">
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1" data-icon="home">home</span>
+<span class="font-label-md text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1" data-icon="search">search</span>
+<span class="font-label-md text-[10px]">Cari</span>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-on-surface-variant hover:text-primary transition-colors relative" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1" data-icon="receipt_long">receipt_long</span>
+<span class="font-label-md text-[10px]">Transaksi</span>
+<div class="absolute top-2 right-4 w-2 h-2 bg-error rounded-full"></div>
+</a>
+<a class="flex flex-col items-center justify-center w-full h-full text-primary font-bold" href="#">
+<span class="material-symbols-outlined text-[24px] mb-1 fill-icon" data-icon="person">person</span>
+<span class="font-label-md text-[10px]">Akun</span>
+</a>
+</nav>
+
+
+<div id="admin-chat-popup" class="hidden fixed bottom-20 md:bottom-8 right-4 md:right-8 w-[320px] bg-surface-container-lowest rounded-2xl shadow-2xl border border-outline-variant/20 z-50 overflow-hidden flex flex-col">
+  <div class="bg-primary p-4 flex justify-between items-center text-white">
+    <div class="flex items-center gap-2">
+      <span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+      <span class="font-bold text-label-md">Chat Admin</span>
+    </div>
+    <button onclick="document.getElementById('admin-chat-popup').classList.add('hidden')" class="hover:bg-white/20 rounded-full p-1 transition-colors">
+      <span class="material-symbols-outlined text-[20px]" data-icon="close">close</span>
+    </button>
+  </div>
+  <div class="p-6 h-48 flex flex-col justify-center items-center text-center gap-3">
+    <div class="w-12 h-12 bg-surface-container rounded-full flex items-center justify-center">
+      <span class="material-symbols-outlined text-outline" data-icon="forum">forum</span>
+    </div>
+    <p class="text-body-sm text-on-surface-variant">Halo, ada yang bisa kami bantu?</p>
+  </div>
+  <div class="p-4 border-t border-outline-variant/10">
+    <div class="relative">
+      <input type="text" placeholder="Ketik pesan..." class="w-full pl-4 pr-10 py-2 rounded-full border border-outline-variant bg-surface-container-low text-body-sm focus:border-primary focus:ring-1 focus:ring-primary transition-all">
+      <button class="absolute right-2 top-1/2 -translate-y-1/2 text-primary">
+        <span class="material-symbols-outlined" data-icon="send">send</span>
+      </button>
+    </div>
+  </div>
+</div></body></html>

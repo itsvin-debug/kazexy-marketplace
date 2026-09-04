@@ -1,0 +1,436 @@
+<!DOCTYPE html><html lang="id" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Favorit Saya - Nexus Gaming</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline": "#757682",
+                      "inverse-surface": "#2d3133",
+                      "on-primary-fixed": "#00164e",
+                      "surface-bright": "#f7f9fb",
+                      "secondary-container": "#8455ef",
+                      "surface-variant": "#e0e3e5",
+                      "tertiary-fixed": "#dae2fd",
+                      "inverse-primary": "#b6c4ff",
+                      "surface-container-low": "#f2f4f6",
+                      "on-error-container": "#93000a",
+                      "on-primary-fixed-variant": "#264191",
+                      "secondary-fixed-dim": "#d0bcff",
+                      "on-tertiary": "#ffffff",
+                      "surface": "#f7f9fb",
+                      "on-tertiary-fixed": "#131b2e",
+                      "surface-dim": "#d8dadc",
+                      "surface-container": "#eceef0",
+                      "on-secondary-fixed": "#23005c",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#384055",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#b6c4ff",
+                      "on-error": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed": "#e9ddff",
+                      "on-surface": "#191c1e",
+                      "primary-container": "#1e3a8a",
+                      "on-background": "#191c1e",
+                      "tertiary-fixed-dim": "#bec6e0",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed-variant": "#5516be",
+                      "on-secondary-container": "#fffbff",
+                      "secondary": "#6b38d4",
+                      "on-tertiary-container": "#a4acc5",
+                      "tertiary": "#222a3e",
+                      "on-surface-variant": "#444651",
+                      "on-tertiary-fixed-variant": "#3f465c",
+                      "primary": "#00236f",
+                      "surface-tint": "#4059aa",
+                      "background": "#f7f9fb",
+                      "surface-container-highest": "#e0e3e5",
+                      "inverse-on-surface": "#eff1f3",
+                      "outline-variant": "#c5c5d3",
+                      "primary-fixed": "#dce1ff",
+                      "surface-container-high": "#e6e8ea",
+                      "error": "#ba1a1a",
+                      "on-primary-container": "#90a8ff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "base": "8px",
+                      "gutter": "24px",
+                      "stack-lg": "24px",
+                      "stack-md": "12px",
+                      "margin-desktop": "40px",
+                      "margin-mobile": "16px",
+                      "stack-sm": "4px"
+              },
+              "fontFamily": {
+                      "display-lg-mobile": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Inter"
+                      ],
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ],
+                      "label-bold": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "label-bold": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        .product-card {
+            box-shadow: 0 4px 15px rgba(0, 35, 111, 0.05);
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 35, 111, 0.1);
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, theme('colors.primary'), theme('colors.secondary'));
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface min-h-screen flex">
+<!-- SideNavBar (Desktop) -->
+<aside class="hidden md:flex flex-col bg-surface-container w-64 fixed left-0 top-0 h-screen shadow-md border-r border-outline-variant/20 z-40">
+<div class="flex flex-col gap-stack-md py-stack-lg flex-grow">
+<!-- Header -->
+<div class="px-margin-desktop mb-stack-lg flex flex-col items-center">
+<img alt="Gaming Profile Avatar" class="w-20 h-20 rounded-full mb-stack-sm object-cover border-2 border-primary" data-alt="A stylized, high-quality vector avatar of a gamer character, modern flat design, blue and purple neon accents, light gray background, clean and professional look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYXmyEQ93wPoL6tA-Y4AmhstiET7xDP2JKOd7WYxmZ3Z2omf9xZnefG658LpAjeBKNGWGNpBbcjr1XwjEoFPlu-l42T36V-G_L6efpUyfkHrqOtpzh3ZXj23_4t9ThZZo7AC2QP6mL3V8MLrcwOdT0B9_bpOc7g1aoSJEFkO7K5MlZmjApFtWz08sHTmIDiY3zc74tAgNNJpKgdIPsChi3uJ346w9DthCLBwIed7TNucVs82XNUKK6">
+<h2 class="font-headline-sm text-headline-sm text-primary text-center">Halo, Gamers!</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center">Level 24 Member</p>
+<button class="mt-stack-sm w-full py-2 bg-gradient-to-r from-primary to-secondary text-white font-label-bold text-label-bold rounded-lg shadow-sm hover:opacity-90 transition-opacity">Upgrade VIP</button>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-stack-sm px-4"><a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 font-label-md text-label-md hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+<a class="bg-secondary-container text-on-secondary-container rounded-xl flex items-center gap-3 px-4 py-3 font-label-md text-label-md transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined fill" data-icon="favorite" data-weight="fill">favorite</span>
+                    Favorit
+                </a>
+<a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 font-label-md text-label-md hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long">receipt_long</span>
+                    Transaksi
+                </a>
+<a class="text-on-surface-variant/50 flex items-center justify-between px-4 py-3 font-label-md text-label-md transition-all rounded-xl cursor-not-allowed" href="#">
+    <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+        Toko Saya
+    </div>
+    <span class="material-symbols-outlined text-body-sm" data-icon="lock">lock</span>
+</a><a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 font-label-md text-label-md hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                    Bantuan
+                </a>
+<a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 font-label-md text-label-md hover:bg-surface-container-highest transition-all rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+                    Akun
+                </a>
+</nav>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar (Web) -->
+<header class="hidden md:flex bg-surface shadow-sm sticky top-0 z-30 w-full">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<!-- Brand -->
+<div class="flex items-center gap-4">
+<span class="font-headline-md text-headline-md font-black text-primary">Nexus Gaming</span>
+</div>
+<!-- Navigation Links (Centered) -->
+<nav class="flex items-center gap-8">
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-colors scale-95 duration-150 ease-in-out" href="#">Promo</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-colors scale-95 duration-150 ease-in-out" href="#">Terbaru</a>
+<a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary transition-colors scale-95 duration-150 ease-in-out" href="#">Flash Sale</a>
+</nav>
+<!-- Search & Actions -->
+<div class="flex items-center gap-6">
+<!-- Search Bar -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant/30 rounded-full focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm w-64 transition-all" placeholder="Cari game..." type="text">
+</div>
+<!-- Icons -->
+<div class="flex gap-4 items-center">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-error text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">3</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<img alt="User Profile Avatar" class="w-8 h-8 rounded-full border border-outline-variant/30 object-cover cursor-pointer" data-alt="A stylized, high-quality vector avatar of a gamer character, modern flat design, blue and purple neon accents, light gray background, clean and professional look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzIJpV8wKh9o0hwjulFlD8HkcgF6m4WuyptrJjCxMG1S0dcRLB6ofLUaPGIUMf9FJJ8D8H4JWBfqTgPbHb7WPjYRjyzVlKT-n9FxZIGdQoJNIrngjfNd9es6ElsBcZXCjdKiFzm4oWq9bXgM_tnh1N31t6-RJ5H2bZxG-268m8g7jE4fneGGFjqfDCJn7M6mDlH-FveexQxQv5PY1BP5UDoqAvYNGOp6frEo-e7ZPUvaIR62UwlNi3">
+</div>
+</div>
+</div>
+</header>
+<!-- Mobile Top Bar (Simplified) -->
+<header class="md:hidden flex items-center justify-between px-margin-mobile h-16 bg-surface shadow-sm sticky top-0 z-30">
+<span class="font-headline-sm text-headline-sm font-black text-primary">Nexus Gaming</span>
+<button class="text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Page Content -->
+<div class="flex-1 p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-stack-lg">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-stack-sm">Daftar Favorit Saya</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Kelola item dan toko game favorit Anda di satu tempat.</p>
+</div>
+<!-- Tab Navigation -->
+<div class="flex border-b border-outline-variant/30 mb-stack-lg gap-8">
+<button class="pb-3 border-b-2 border-primary text-primary font-headline-sm text-headline-sm transition-colors">Item Favorit</button>
+<button class="pb-3 border-b-2 border-transparent text-on-surface-variant hover:text-primary font-headline-sm text-headline-sm transition-colors">Toko Favorit</button>
+</div>
+<!-- Content Area: Item Favorit (Active) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="product-card bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col h-full border border-surface-variant relative group">
+<button class="absolute top-3 right-3 z-10 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-sm hover:bg-white transition-colors">
+<span class="material-symbols-outlined fill text-error text-xl" data-icon="favorite" data-weight="fill">favorite</span>
+</button>
+<div class="aspect-video relative overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High quality promotional artwork for a modern sci-fi shooter game featuring a lone soldier in futuristic armor overlooking a cyberpunk city at dusk. Vibrant neon blues and pinks contrast with dark shadows. Clean, high-resolution graphic style suitable for a gaming store interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMpnbxp0y7gg4CW-q-DCnpFCCsVLNzL17fcFOSL67ybYhAo9u1Y9dnS6m2ti9_KWN0qrNJwK224IG0q7wKSjzaqWKMegVdC2xDY3zQPsR_73onNRPoltlYCi-6F5xh_DpvNuvRz270baou62pE3jJcTtEAROtLdqR5e0Aise4orKuoLliDj0kSnYz9thHao1NG819GS0f1MJ0H00R_ZWsOwOw-Rr1YmiPIhbYh8_quWlrjkDgOYqQs">
+<div class="absolute bottom-2 left-2 flex gap-2">
+<span class="bg-primary/90 text-white font-label-md text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">PC Game</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-headline-sm text-body-lg text-on-surface line-clamp-2 mb-1">Cyber Strike: Neon Nights (Deluxe Edition)</h3>
+<div class="flex items-center gap-1 text-on-surface-variant mb-auto">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+<span class="font-label-md text-label-md">Galaxy Store</span>
+<span class="text-outline mx-1">•</span>
+<span class="material-symbols-outlined text-[16px] text-[#FFB800] fill">star</span>
+<span class="font-label-md text-label-md">4.8</span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<p class="font-label-md text-label-md text-outline line-through mb-1">Rp 899.000</p>
+<p class="font-headline-md text-headline-sm text-primary">Rp 450.000</p>
+</div>
+<button class="bg-gradient-to-r from-primary to-secondary text-white font-label-bold text-label-bold px-4 py-2 rounded-lg hover:shadow-md hover:brightness-110 transition-all">Beli</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="product-card bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col h-full border border-surface-variant relative group">
+<button class="absolute top-3 right-3 z-10 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-sm hover:bg-white transition-colors">
+<span class="material-symbols-outlined fill text-error text-xl" data-icon="favorite" data-weight="fill">favorite</span>
+</button>
+<div class="aspect-video relative overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover art for an epic fantasy RPG showing a mystical glowing sword resting on an ancient stone altar in a dense, magical forest. Rays of sunlight pierce through the canopy. High contrast, rich greens and golden lighting, premium gaming aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnMok-nTEkI-eWh-g5Ae6SHHs5LgKvsJKM0C4riFftxYcHGSt1GWxVDlY8tW5ABH092R-YMiBDGHOdcZbCsbROux_0iDJTcA8CDHXkRcuF16GCicpOynyBy20ofGAkNt00U0nKJ-lDKnNA3OroEji3nlcdD8xyxZP7X-JaeD4QkSBhjwcyvqcGJ7MrWgsBHLAroC37uZcMgclySq-6a_TeYIiohasB-N04JaAroyjar2vRNPFG96lp">
+<div class="absolute bottom-2 left-2 flex gap-2">
+<span class="bg-secondary/90 text-white font-label-md text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">Key Global</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-headline-sm text-body-lg text-on-surface line-clamp-2 mb-1">Elden Ring: Shadow of the Erdtree</h3>
+<div class="flex items-center gap-1 text-on-surface-variant mb-auto">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+<span class="font-label-md text-label-md">GameHub Pro</span>
+<span class="text-outline mx-1">•</span>
+<span class="material-symbols-outlined text-[16px] text-[#FFB800] fill">star</span>
+<span class="font-label-md text-label-md">5.0</span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<p class="font-headline-md text-headline-sm text-primary">Rp 599.000</p>
+</div>
+<button class="bg-gradient-to-r from-primary to-secondary text-white font-label-bold text-label-bold px-4 py-2 rounded-lg hover:shadow-md hover:brightness-110 transition-all">Beli</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="product-card bg-surface-container-lowest rounded-xl overflow-hidden flex flex-col h-full border border-surface-variant relative group">
+<button class="absolute top-3 right-3 z-10 p-2 bg-white/80 backdrop-blur-sm rounded-full shadow-sm hover:bg-white transition-colors">
+<span class="material-symbols-outlined fill text-error text-xl" data-icon="favorite" data-weight="fill">favorite</span>
+</button>
+<div class="aspect-video relative overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Vibrant promotional art for a multiplayer racing game featuring sleek, customizable sports cars drifting on a neon-lit city track. Dynamic motion blur, bright colors, highly polished 3D render style fitting for a modern storefront." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCORjbx8SpNsRR2i-EWXVS1GvonM8_K6fE-iNd64MjfpBJznlZ-Q5wf1KlG0AJyIPDS3H_XU03Do3POrTL_IApC_IYOaD5q5K7p1inoJR2iVuYl8ZHyPqNEF90JVYgppL7GVYjXAeIuK4pSNmw1ijzQDlOG3J3esgy3EBjn3PwCZpUFI0UN8vawjLVG3YI6LOm6FzB5DfqooduKyCLGd0XUXRSzVnakUh_3CvGJhOTyA5ugPFwRR625">
+<div class="absolute bottom-2 left-2 flex gap-2">
+<span class="bg-tertiary/90 text-white font-label-md text-[10px] px-2 py-1 rounded-full backdrop-blur-sm">In-Game Item</span>
+</div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h3 class="font-headline-sm text-body-lg text-on-surface line-clamp-2 mb-1">Need for Speed: Unbound - 5000 Premium Currency</h3>
+<div class="flex items-center gap-1 text-on-surface-variant mb-auto">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+<span class="font-label-md text-label-md">Nexus Official</span>
+<span class="text-outline mx-1">•</span>
+<span class="material-symbols-outlined text-[16px] text-[#FFB800] fill">star</span>
+<span class="font-label-md text-label-md">4.9</span>
+</div>
+<div class="mt-4 flex items-end justify-between">
+<div>
+<p class="font-headline-md text-headline-sm text-primary">Rp 150.000</p>
+</div>
+<button class="bg-gradient-to-r from-primary to-secondary text-white font-label-bold text-label-bold px-4 py-2 rounded-lg hover:shadow-md hover:brightness-110 transition-all">Beli</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State Example (Hidden by default, shown for structure if needed) -->
+<!--
+            <div class="flex flex-col items-center justify-center py-20 text-center">
+                <span class="material-symbols-outlined text-6xl text-surface-variant mb-4">heart_broken</span>
+                <h3 class="font-headline-md text-headline-md text-on-surface mb-2">Belum ada favorit</h3>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6">Mulai jelajahi game dan simpan yang Anda sukai di sini.</p>
+                <button class="border border-primary text-primary font-label-bold text-label-bold px-6 py-2 rounded-lg hover:bg-primary hover:text-white transition-colors">Jelajahi Sekarang</button>
+            </div>
+            -->
+</div>
+<!-- Footer -->
+<footer class="bg-tertiary w-full mt-auto">
+<div class="w-full py-stack-lg px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto gap-4">
+<div class="font-headline-sm text-headline-sm text-on-tertiary">
+                    Nexus Gaming
+                </div>
+<div class="flex flex-wrap gap-6 justify-center">
+<a class="font-label-bold text-label-bold text-tertiary-fixed-dim hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">Tentang Kami</a>
+<a class="font-label-bold text-label-bold text-tertiary-fixed-dim hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">Kebijakan Privasi</a>
+<a class="font-label-bold text-label-bold text-tertiary-fixed-dim hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">Syarat &amp; Ketentuan</a>
+<a class="font-label-bold text-label-bold text-tertiary-fixed-dim hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">Kontak</a>
+</div>
+<div class="font-body-sm text-body-sm text-tertiary-fixed-dim">
+                    © 2024 Nexus Gaming Marketplace. All rights reserved.
+                </div>
+</div>
+</footer>
+</main>
+<!-- Mobile Bottom Navigation (Visible only on small screens) -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface border-t border-outline-variant/20 flex justify-around py-3 z-40 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-md text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined fill" data-weight="fill">favorite</span>
+<span class="font-label-md text-[10px] font-bold">Favorit</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label-md text-[10px]">Transaksi</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-[10px]">Akun</span>
+</a>
+</nav>
+
+
+</body></html>

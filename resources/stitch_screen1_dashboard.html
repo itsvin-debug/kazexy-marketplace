@@ -1,0 +1,447 @@
+<!DOCTYPE html><html class="dark" lang="id" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nexus Gaming Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "secondary-container": "#8455ef",
+                "inverse-on-surface": "#eff1f3",
+                "inverse-surface": "#2d3133",
+                "error-container": "#ffdad6",
+                "on-secondary": "#ffffff",
+                "surface-dim": "#d8dadc",
+                "on-error": "#ffffff",
+                "on-background": "#191c1e",
+                "on-surface": "#191c1e",
+                "on-tertiary-container": "#a4acc5",
+                "inverse-primary": "#b6c4ff",
+                "on-primary": "#ffffff",
+                "primary-container": "#1e3a8a",
+                "on-surface-variant": "#444651",
+                "error": "#ba1a1a",
+                "outline": "#757682",
+                "on-tertiary": "#ffffff",
+                "on-secondary-container": "#fffbff",
+                "on-tertiary-fixed-variant": "#3f465c",
+                "tertiary-fixed-dim": "#bec6e0",
+                "tertiary-container": "#384055",
+                "surface-container-lowest": "#ffffff",
+                "secondary": "#6b38d4",
+                "on-primary-container": "#90a8ff",
+                "on-secondary-fixed-variant": "#5516be",
+                "surface-container": "#eceef0",
+                "on-error-container": "#93000a",
+                "surface": "#f7f9fb",
+                "tertiary": "#222a3e",
+                "surface-container-low": "#f2f4f6",
+                "surface-tint": "#4059aa",
+                "tertiary-fixed": "#dae2fd",
+                "outline-variant": "#c5c5d3",
+                "on-tertiary-fixed": "#131b2e",
+                "on-primary-fixed-variant": "#264191",
+                "primary-fixed-dim": "#b6c4ff",
+                "secondary-fixed-dim": "#d0bcff",
+                "surface-container-highest": "#e0e3e5",
+                "surface-container-high": "#e6e8ea",
+                "surface-variant": "#e0e3e5",
+                "background": "#f7f9fb",
+                "primary": "#00236f",
+                "secondary-fixed": "#e9ddff",
+                "on-secondary-fixed": "#23005c",
+                "on-primary-fixed": "#00164e",
+                "primary-fixed": "#dce1ff",
+                "surface-bright": "#f7f9fb"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-mobile": "16px",
+                "container-max": "1280px",
+                "gutter": "24px",
+                "stack-sm": "4px",
+                "stack-md": "12px",
+                "stack-lg": "24px",
+                "base": "8px",
+                "margin-desktop": "40px"
+        },
+        "fontFamily": {
+                "label-bold": [
+                        "Inter"
+                ],
+                "display-lg-mobile": [
+                        "Inter"
+                ],
+                "label-md": [
+                        "Inter"
+                ],
+                "headline-sm": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "body-sm": [
+                        "Inter"
+                ],
+                "display-lg": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "label-bold": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "label-md": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-sm": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface flex h-screen overflow-hidden">
+<!-- SideNavBar -->
+<nav class="bg-surface-container dark:bg-surface-container-low h-screen w-64 fixed left-0 top-0 shadow-md flex flex-col gap-stack-md py-stack-lg border-r border-outline-variant/20 z-20">
+<div class="px-4 mb-8">
+<div class="flex items-center gap-4">
+<img class="w-12 h-12 rounded-full object-cover border-2 border-primary" data-alt="A stylized, modern high-resolution avatar of a sci-fi video game character with glowing neon blue and purple accents, suitable for a premium gaming profile picture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGfV-wDnar4bshixVaReRjC0vuKu-YZw5IvxiEfzBpfkyM50QSnKF93eWKHImiwWw8Ng-ghBbSSUOb9-KUqDm6nqHjn0eDdM8ww9Xd2tlvf8D-XD9Pw9Za8m7uhcMPBquSDw5krqmjJDgPRMUimQpQURSrxbbzbQFVBwQlwKsW_RU20bE7RJDNJAEo4mEm1_DADIILaW9ctGSQ9iYdigkKUo8vxmpr0e5HEJQnRoN8pTNDzTB7Kn5d">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary">Halo, Gamers!</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Level 24 Member</p>
+</div>
+</div>
+<button class="mt-4 w-full bg-primary text-on-primary py-2 rounded-lg font-label-md text-label-md hover:brightness-110 transition-all">Upgrade VIP</button>
+</div>
+<div class="flex flex-col gap-2 px-2 flex-grow">
+<a class="bg-secondary-container text-on-secondary-container rounded-xl flex items-center gap-3 px-4 py-3 active:scale-98 transition-transform font-label-md text-label-md" href="#"><span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">dashboard</span> Dashboard</a><a class="text-on-surface-variant dark:text-outline-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all active:scale-98 rounded-xl font-label-md text-label-md" href="#"><span class="material-symbols-outlined">favorite</span> Favorit</a>
+<a class="text-on-surface-variant dark:text-outline-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all active:scale-98 rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">receipt_long</span>
+                Transaksi
+            </a>
+<div class="text-on-surface-variant/40 dark:text-outline-variant/40 flex items-center justify-between px-4 py-3 rounded-xl font-label-md text-label-md cursor-not-allowed select-none">
+    <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined">storefront</span>
+        Toko Saya
+    </div>
+    <span class="material-symbols-outlined text-sm">lock</span>
+</div><a class="text-on-surface-variant dark:text-outline-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all active:scale-98 rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">help</span>
+                Bantuan
+            </a>
+<a class="text-on-surface-variant dark:text-outline-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all active:scale-98 rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined">person</span>
+                Akun
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-64 flex flex-col h-screen overflow-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-inverse-surface shadow-sm sticky top-0 z-10 w-full">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<div class="font-headline-md text-headline-md font-black text-primary dark:text-inverse-primary">Nexus Gaming</div>
+<div class="flex-1 max-w-2xl mx-8 relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-full py-3 pl-12 pr-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-md text-body-md" placeholder="Cari item, akun, atau top up..." type="text">
+</div>
+<div class="flex items-center gap-6">
+<nav class="flex items-center gap-6">
+<a class="text-primary dark:text-inverse-primary font-bold border-b-2 border-primary font-label-md text-label-md py-2 hover:text-secondary dark:hover:text-secondary-fixed transition-colors scale-95 duration-150 ease-in-out" href="#">Promo</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md py-2 hover:text-secondary dark:hover:text-secondary-fixed transition-colors scale-95 duration-150 ease-in-out" href="#">Terbaru</a>
+<a class="text-on-surface-variant dark:text-outline-variant font-label-md text-label-md py-2 hover:text-secondary dark:hover:text-secondary-fixed transition-colors scale-95 duration-150 ease-in-out" href="#">Flash Sale</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">shopping_cart</span></button>
+<button class="text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">notifications</span></button>
+<img class="w-10 h-10 rounded-full object-cover" data-alt="User Profile Avatar for Nexus Gaming showing a futuristic helmet design with bright glowing visor, reflecting a modern tech-forward gaming aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPck5pdBVG1cufOYQKwLijrtgnwcwUtWA_LmdBtscUCWydpEKSgVmxZk0ZN6lWZKRdVMXQzyJ2I8YcXvAKKvtMl2W476GmlACCQjztxW9pmVxEoVQs7vObqjVpCTJhBWUdfMPEesO7xM6eQb9Tb2r5CCWfIfFt8qlelYJgUgogtVZJ0z25n_2hn5ICaQam5_u-VRYSUpVejj1DJ4B-s6YW2qPx098M67UpNJvOC9kNcQDHNgpXYCRB">
+</div>
+</div>
+</div>
+</header>
+<!-- Scrollable Content -->
+<main class="flex-1 overflow-y-auto p-margin-desktop bg-background">
+<div class="max-w-container-max mx-auto space-y-stack-lg">
+<!-- Banner Carousel (Static Representation) -->
+<div class="w-full h-64 rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover" data-alt="A wide, dynamic promotional banner for a modern gaming marketplace. The scene shows epic high-fantasy and futuristic sci-fi characters engaged in action, with bold, vibrant neon colors and sleek modern typography advertising 'Promo Event Game'. The lighting is dramatic and high-contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN048AoTJQSCRhUhS8smW4AnIeD3wpF_ajCyPf2nJbXvn1j28GpTu9M7vvXYY7sbe7srGOYEoleIPlSWC98HjsgtcrlkFFBaqz_MlGfn-T4d51uJMcjgpbUc3S-Om3Pz2F8a9S2AaOymjoMIMQtpHnBQlI2k7DzfOShYCu15R3BHbMqDzD4Rk2h2ZGemFDvA0rAIoIfsNQ7VFqoci1_DH_X7OE-UMIO04t4Vj3hKRNv5-yDqd9Dq7t">
+<div class="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center p-12">
+<div>
+<h2 class="text-white font-display-lg text-display-lg mb-4">Promo Top Up Terbesar</h2>
+<button class="bg-primary hover:brightness-110 text-white px-6 py-3 rounded-lg font-label-bold text-label-bold transition-all shadow-md">Klaim Sekarang</button>
+</div>
+</div>
+</div>
+<!-- Category Filters -->
+<div class="flex gap-4">
+<button class="bg-primary text-white px-6 py-2 rounded-full font-label-md text-label-md shadow-sm hover:brightness-110 transition-all">Top Up</button>
+<button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-full font-label-md text-label-md hover:bg-surface-container-highest transition-all">Beli Akun</button>
+<button class="bg-surface-container-high text-on-surface px-6 py-2 rounded-full font-label-md text-label-md hover:bg-surface-container-highest transition-all">Beli Item</button>
+</div>
+<!-- Product Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="In-game screenshot of a popular mobile MOBA game featuring vibrant magical characters fighting in an arena. High quality, colorful, dynamic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCPQUIpp7AaYVoCR5Ar08DlZRQQdBbb2B0XRjyJo6DtHnZbZap-lVDmqPnKZ4YK88t0M9n5y0Jt3H1tdGhopPrJJc4DsBhDeC-I4aNqfaM0WKubu3Wn199j2z5aaps29OT3Gu3e3sQRglen_a6ZKKWtQuZ8pXLp3rx8Ls07JWz2adwDnI3utR3brEeFHArapCXNR3tefUBqPDMLDWBLO4ENddZajvVUX_RILjpOuQD932XLXBYcOTd">
+<div class="absolute top-4 right-4 bg-error text-white px-2 py-1 rounded text-xs font-bold">-20%</div>
+</div>
+<div class="p-4 space-y-2">
+<h3 class="font-body-lg text-body-lg font-semibold truncate">1000 Diamonds MLBB</h3>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-[#FFB400]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="">4.9</span>
+<span class="mx-1">•</span>
+<span class="">Toko Pro Gaming</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Rp 150.000</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-error transition-colors"><span class="material-symbols-outlined">favorite</span></button>
+<button class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-label-md text-label-md hover:brightness-110 transition-all">Beli</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A cinematic, high-resolution screenshot of a tactical first-person shooter game showing modern futuristic weapons and a tactical map interface. Sleek and competitive gaming vibe." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRKha472jEnUTasINC2apAFKl9nzFBW9YrCu6EamL8psOVfBuZomsRCoy8TbfYG7mgbz-Jgf8VtO6NB64Yobjh4eWZPVWl_q0obmwciGO5Pp0l1Ij7rlc0B_-cBhCdaEO8yB5GzxwApK95MoJz_WR4HIb69Y6GfyWQPSrMCath38F1j_myzBWA_vE8HcfYMFVI2RxB3IbK7VNhm2e2RToFWE5XqFhEwdxAW8PkfH72NNhi9hDeHEaL">
+</div>
+<div class="p-4 space-y-2">
+<h3 class="font-body-lg text-body-lg font-semibold truncate">Akun High Tier Valorant</h3>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-[#FFB400]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="">4.8</span>
+<span class="mx-1">•</span>
+<span class="">Elite Seller</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Rp 550.000</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-error transition-colors"><span class="material-symbols-outlined">favorite</span></button>
+<button class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-label-md text-label-md hover:brightness-110 transition-all">Beli</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A beautiful, serene landscape screenshot from a highly popular open-world anime-style RPG game, showing lush green fields and a majestic fantasy castle in the distance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIPktlmXXwhQJR_4LC453kpK5XH5i3yFyPcGW6PrrZlweMpeYDyiKK8iH7koELxMwX9BiialjBkkjmOaZ_L2V7AOEEW3qkI52dCD-3OtAOisGBPZEy3tIofFx8dnEWUogrB2o_7htYL8eukgCF5A6rZxsVxlnZPr_XyMnVVGpUo-0BY8a6QiMlQNAts9FMRF5PbnvuPXIZJAjbap5EohpPzcvWcZYAtdmLfDvbQ0FHY8SqwBxOluH8">
+</div>
+<div class="p-4 space-y-2">
+<h3 class="font-body-lg text-body-lg font-semibold truncate">Blessing of the Welkin Moon</h3>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-[#FFB400]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="">5.0</span>
+<span class="mx-1">•</span>
+<span class="">Genshin Store</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Rp 75.000</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-error transition-colors"><span class="material-symbols-outlined">favorite</span></button>
+<button class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-label-md text-label-md hover:brightness-110 transition-all">Beli</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Action-packed scene from a mobile battle royale game, showing characters skydiving or in intense gunfights on a vast island map. Energetic and high-contrast." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQwLOyWLl-E_4xTlo_Su57auR6vvNI9Q6O_uGCUu88mHRHMTLSdx94SFly1653jVQ8Icp6a6h5aTRNbxa8U4j7-_TUclIKuCHh0hIH5wqT1rlzO4v3aRF8LII-7wjXKeXzgRRw_RIFualk9aCAeGu2KqBT90atBLvD-E4pFjQpLUwfKsMgXXGikW6NHxlFX9qDW4k78s47uQdFUXBkPuemuBimYI3E6-hyOvUkSuza5R13CS-FloAV">
+</div>
+<div class="p-4 space-y-2">
+<h3 class="font-body-lg text-body-lg font-semibold truncate">720 Diamonds Free Fire</h3>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-[#FFB400]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="">4.7</span>
+<span class="mx-1">•</span>
+<span class="">FF Center</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Rp 100.000</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-error transition-colors"><span class="material-symbols-outlined">favorite</span></button>
+<button class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-label-md text-label-md hover:brightness-110 transition-all">Beli</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A striking character portrait from an open-world anime RPG, featuring intricate fantasy armor, glowing magical particle effects, and a bright, stylized aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCGQclH9-oJ1-fQJnLOLGZvxSDOUZ7_ehgK6m1751mAF27mVWFhRbfYvGl_GyTiXZicjHiZo5MxLRhM3TU20-gJFfX6eQ-UYfol3M2Q4DYWPIV5wCW4qGvakS6E_SnYdA9mr-Au6_mpTTYpu-ja-WgADqq9vEu3J6Vg5nSAqZku8cwVuTggGw2zLg5SqlCgSZ1qUy9wBPmYnLbSlOvc2hAqlAV9yZ83ZwXksddtt0s-zpZHsGETb3y">
+</div>
+<div class="p-4 space-y-2">
+<h3 class="font-body-lg text-body-lg font-semibold truncate">Akun AR 55 Genshin</h3>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-[#FFB400]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="">4.9</span>
+<span class="mx-1">•</span>
+<span class="">Toko Animeku</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Rp 350.000</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-error transition-colors"><span class="material-symbols-outlined">favorite</span></button>
+<button class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-label-md text-label-md hover:brightness-110 transition-all">Beli</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A stylized UI rendering of a futuristic cosmetic weapon skin for a tactical shooter game. High-tech, metallic textures with glowing energy accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOqLd2NLMpiJzH-ib17d3mfi0WGowDVR-AT5PSk2ujCOl7IVSCS_w95kCDaD9TVixllmkBZ_iHUNm12G2YWc-I99Uo6gm2FMNSold-xZOxn-ncAjCCy6z-F0UWOX7vPAfk0wKdH58iDuskmOUECvVSHl1USlzxC1Z-fWdjfai9lO5m99k5iqh6DMn2tndRXbDVaLNkhhdJhGbm2RrRu-Spm1a7MADZ7JcLhomE-YVGN94VQ1N2WLQu">
+</div>
+<div class="p-4 space-y-2">
+<h3 class="font-body-lg text-body-lg font-semibold truncate">Skin Vandal Premium</h3>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-[#FFB400]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="">4.6</span>
+<span class="mx-1">•</span>
+<span class="">Valo Skins ID</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Rp 200.000</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-error transition-colors"><span class="material-symbols-outlined">favorite</span></button>
+<button class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-label-md text-label-md hover:brightness-110 transition-all">Beli</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 7 -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A vibrant, stylized promotional image for a mobile MOBA game, featuring a popular magical hero holding an ornate glowing staff in a dynamic pose." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYnZR2jdu8H1I99wxV3lMxI_0geRt4KYyfNQxr8bcxoctVIIZa5Vy2w5UaEwQrcC9iYl8F2VYjAMGPsSribVQydsPsAJMW1gQBjwVQrTx-eeU05JoZPlxefndSIPz4YQRBMQIvDu_3L6Rb_qmE1bIeGNCK9MuWpxU2Up5DkVLBiP-oV2ECFAHkZvIf_2EwX7JvfL0-ziTjWqnWjizqm7I8VmiJE4tp6INQC4B2w5XrLVc-ebfe3xX8">
+</div>
+<div class="p-4 space-y-2">
+<h3 class="font-body-lg text-body-lg font-semibold truncate">Starlight Member MLBB</h3>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-[#FFB400]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="">5.0</span>
+<span class="mx-1">•</span>
+<span class="">Official Store</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Rp 120.000</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-error transition-colors"><span class="material-symbols-outlined">favorite</span></button>
+<button class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-label-md text-label-md hover:brightness-110 transition-all">Beli</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 8 -->
+<div class="bg-white rounded-[24px] overflow-hidden shadow-sm hover:shadow-md transition-shadow group relative">
+<div class="aspect-[16/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Intense close-up portrait of a battle-hardened character from a mobile battle royale game, wearing tactical gear and a distinctive mask, set against an explosive background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTCkvkR6N95izOfZQkBFc15_C6oDDobkO7UujJv4i13E3ICZ-ju1JKd33uGbwh2q0_HH0Cdxjjrr0ectJ5_XSJr6dq-cSVu8yUE7alijEnXkrsD0_p3eT2eUEKMuG0sM2k9N8RiTJPpaXkRwMT6zvmrMkAw8V8rHHJgH2OyrSqvBi_T8sRZDkU9H3Wy_8XCdb_QAFyYutPjkBTuTCD_njtcPvaoame1hy6H1zyDU2SOGG-h9_0_tZ_">
+</div>
+<div class="p-4 space-y-2">
+<h3 class="font-body-lg text-body-lg font-semibold truncate">Elite Pass Free Fire</h3>
+<div class="flex items-center gap-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-sm text-[#FFB400]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="">4.8</span>
+<span class="mx-1">•</span>
+<span class="">Pass Center</span>
+</div>
+<div class="flex justify-between items-end mt-4">
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Rp 80.000</div>
+<div class="flex gap-2">
+<button class="p-2 text-outline hover:text-error transition-colors"><span class="material-symbols-outlined">favorite</span></button>
+<button class="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-lg font-label-md text-label-md hover:brightness-110 transition-all">Beli</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+
+</body></html>

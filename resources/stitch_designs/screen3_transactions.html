@@ -1,0 +1,365 @@
+<!DOCTYPE html><html lang="id"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Riwayat &amp; Status Transaksi - Nexus Gaming</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-container": "#384055",
+                        "surface-tint": "#4059aa",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-container": "#eceef0",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "on-background": "#191c1e",
+                        "tertiary": "#222a3e",
+                        "primary-fixed": "#dce1ff",
+                        "outline": "#757682",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "on-surface": "#191c1e",
+                        "tertiary-fixed": "#dae2fd",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-fixed": "#23005c",
+                        "surface-variant": "#e0e3e5",
+                        "primary": "#00236f",
+                        "on-surface-variant": "#444651",
+                        "surface": "#f7f9fb",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f7f9fb",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "secondary-container": "#8455ef",
+                        "on-primary-container": "#90a8ff",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary-fixed": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#a4acc5",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#264191",
+                        "outline-variant": "#c5c5d3",
+                        "primary-container": "#1e3a8a",
+                        "inverse-primary": "#b6c4ff",
+                        "secondary-fixed": "#e9ddff",
+                        "secondary": "#6b38d4",
+                        "error": "#ba1a1a",
+                        "background": "#f7f9fb",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "on-primary-fixed": "#00164e",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "container-max": "1280px",
+                        "margin-mobile": "16px",
+                        "stack-md": "12px",
+                        "stack-lg": "24px",
+                        "stack-sm": "4px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "label-bold": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        .glass-panel { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(8px); }
+        .ambient-shadow { box-shadow: 0 4px 15px rgba(0, 35, 111, 0.05); }
+        .ambient-shadow-hover:hover { box-shadow: 0 8px 25px rgba(0, 35, 111, 0.1); transform: translateY(-2px); transition: all 0.3s ease; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md flex flex-col md:flex-row">
+<!-- SideNavBar -->
+<aside class="hidden md:flex bg-surface-container dark:bg-surface-container-low h-screen w-64 fixed left-0 top-0 shadow-md flex-col gap-stack-md py-stack-lg border-r border-outline-variant/20 z-40">
+<div class="px-4 mb-8">
+<h1 class="font-headline-sm text-headline-sm text-primary dark:text-inverse-primary">Nexus Gaming</h1>
+</div>
+<div class="px-4 mb-6 flex items-center gap-4">
+<img alt="Gaming Profile Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-primary-fixed" data-alt="A clean, modern avatar illustration for a gaming profile, featuring a minimalist helmet or abstract geometric gamer motif, set against a soft, bright background to fit a light-mode corporate modern gaming UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfMRjy6Ts7sOShu3WKyw4O_zbK6npwdxTDoPusHqwg0PwEnzyaRBDoxZiFUYgQJ5nXckgAsL3nkclliHtcJ-iN3DFjSeHpWCRdE28IUbHTzHFhTntr6HSySZczYMEhNDINO-jAsyRrdz0lU1Pm3OVN4HOdrTjl_LAZdkQMqZXup7q0tr0TtAES3gqT6jEwtXkKC75BjXJzozrnvfSFyqjgnyk8D1i-3tP-j1NK14l3byANaLpW1QdP">
+<div>
+<h2 class="font-headline-sm text-[16px] text-primary">Halo, Gamers!</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Level 24 Member</p>
+</div>
+</div>
+<nav class="flex-1 flex flex-col gap-2 px-2">
+<a class="text-on-surface-variant dark:text-outline-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all active:scale-98 rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-on-surface-variant dark:text-outline-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all active:scale-98 rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+                Favorit
+            </a>
+<a class="bg-secondary-container text-on-secondary-container rounded-xl flex items-center gap-3 px-4 py-3 active:scale-98 transition-transform font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="receipt_long" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+                Transaksi
+            </a><a class="text-on-surface-variant/50 dark:text-outline-variant/50 flex items-center justify-between px-4 py-3 cursor-not-allowed rounded-xl font-label-md text-label-md" href="#">
+    <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined" data-icon="store">store</span>
+        Toko Saya
+    </div>
+    <span class="material-symbols-outlined text-xs" data-icon="lock">lock</span>
+</a>
+<a class="text-on-surface-variant dark:text-outline-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all active:scale-98 rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Bantuan
+            </a>
+<a class="text-on-surface-variant dark:text-outline-variant flex items-center gap-3 px-4 py-3 hover:bg-surface-container-highest dark:hover:bg-surface-container-high transition-all active:scale-98 rounded-xl font-label-md text-label-md" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+                Akun
+            </a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-lg font-label-bold text-label-bold hover:brightness-110 transition-all shadow-md">
+                Upgrade VIP
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="hidden md:flex bg-surface dark:bg-inverse-surface shadow-sm docked full-width top sticky z-30">
+<div class="flex justify-between items-center w-full px-margin-desktop max-w-container-max mx-auto h-20">
+<!-- Search Bar -->
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm transition-all" placeholder="Cari game, item, atau voucher..." type="text">
+</div>
+<!-- Navigation Links -->
+<nav class="flex gap-8">
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md scale-95 duration-150 ease-in-out" href="#">Promo</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md scale-95 duration-150 ease-in-out" href="#">Terbaru</a>
+<a class="text-on-surface-variant dark:text-outline-variant hover:text-secondary dark:hover:text-secondary-fixed transition-colors font-label-md text-label-md scale-95 duration-150 ease-in-out" href="#">Flash Sale</a>
+</nav>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-6">
+<button class="text-on-surface-variant hover:text-secondary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-error text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">3</span>
+</button>
+<button class="text-on-surface-variant hover:text-secondary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute -top-1 -right-1 bg-error text-white text-[10px] font-bold w-2 h-2 rounded-full"></span>
+</button>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 px-margin-mobile md:px-margin-desktop py-stack-lg max-w-container-max mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-8">
+<h1 class="font-display-lg-mobile md:font-display-lg text-primary dark:text-inverse-primary mb-2">Riwayat &amp; Status Transaksi</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Pantau status pesanan dan kelola transaksi digital Anda di sini.</p>
+</div>
+<!-- Status Filter Tabs -->
+<div class="mb-8 overflow-x-auto pb-2 scrollbar-hide">
+<div class="flex gap-2 border-b border-outline-variant/30 min-w-max">
+<button class="px-6 py-3 border-b-2 border-primary text-primary font-label-bold text-label-bold transition-all">Semua</button>
+<button class="px-6 py-3 border-b-2 border-transparent text-on-surface-variant hover:text-secondary hover:bg-surface-container-low transition-all font-label-md text-label-md rounded-t-lg">Menunggu Pembayaran</button>
+<button class="px-6 py-3 border-b-2 border-transparent text-on-surface-variant hover:text-secondary hover:bg-surface-container-low transition-all font-label-md text-label-md rounded-t-lg">Sedang Diproses</button>
+<button class="px-6 py-3 border-b-2 border-transparent text-on-surface-variant hover:text-secondary hover:bg-surface-container-low transition-all font-label-md text-label-md rounded-t-lg">Dikirim</button>
+<button class="px-6 py-3 border-b-2 border-transparent text-on-surface-variant hover:text-secondary hover:bg-surface-container-low transition-all font-label-md text-label-md rounded-t-lg">Selesai</button>
+<button class="px-6 py-3 border-b-2 border-transparent text-on-surface-variant hover:text-secondary hover:bg-surface-container-low transition-all font-label-md text-label-md rounded-t-lg">Dibatalkan</button>
+</div>
+</div>
+<!-- Transaction List -->
+<div class="flex flex-col gap-6">
+<!-- Card 1: Menunggu Pembayaran -->
+<div class="glass-panel rounded-xl border border-outline-variant/20 ambient-shadow ambient-shadow-hover p-6">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 pb-4 border-b border-outline-variant/20 gap-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline">storefront</span>
+<span class="font-label-bold text-label-bold text-on-surface">Galaxy Store</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">20 Mei 2024</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-outline font-mono text-xs">TRX-20240501-001</span>
+</div>
+<div class="bg-error-container/30 text-[#b36b00] px-3 py-1 rounded-full font-label-bold text-[10px] border border-[#b36b00]/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> Menunggu Pembayaran
+                        </div>
+</div>
+<div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+<img alt="Cyber Strike: Neon Nights" class="w-24 h-24 object-cover rounded-lg shadow-sm" data-alt="A highly detailed thumbnail image of a futuristic cyberpunk video game cover art, featuring a neon-lit city street at night with glowing blue and purple accents, high contrast, sharp details, suitable for a modern gaming marketplace UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB34mB7MToKWfQRxj0qRSgI_IwkjGMQQgXfQ3erqgB2eczGXkJrgWMOFCwvUz-B3h8AJUkl8V7FCsdz6gJxbEsG5EaOton7AZIBF-GxdkXVikt-uYptl_PR65vVVx9za8aH1nWlR7_hLSymOPhmYSsRQSxh4IOjwUXv9y1qTkU8cTaRESDDL0lZOKvo0c_gGa1ICWP7C_ly3lr8miBNIEylko5ELpWa3LJa9Tp0ko9MwkrZj8eVBTA2">
+<div class="flex-1">
+<h3 class="font-headline-sm text-[18px] text-on-background mb-1">Cyber Strike: Neon Nights</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Digital Key - PC (Steam)</p>
+<p class="font-label-md text-label-md text-outline">1 x Rp 450.000</p>
+</div>
+<div class="text-left md:text-right w-full md:w-auto mt-4 md:mt-0 flex flex-col md:items-end justify-between h-full">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Total Belanja</p>
+<p class="font-headline-md text-headline-md text-primary">Rp 450.000</p>
+</div>
+<div class="mt-4 flex gap-3">
+<button class="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-lg font-label-bold text-label-bold hover:brightness-110 transition-all shadow-md">Bayar Sekarang</button>
+<button class="px-4 py-2 border border-outline text-on-surface-variant rounded-lg font-label-bold text-label-bold hover:bg-surface-container-low transition-all">Detail</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2: Selesai -->
+<div class="glass-panel rounded-xl border border-outline-variant/20 ambient-shadow ambient-shadow-hover p-6">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 pb-4 border-b border-outline-variant/20 gap-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline">storefront</span>
+<span class="font-label-bold text-label-bold text-on-surface">Nexus Official</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">18 Mei 2024</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-outline font-mono text-xs">TRX-20240428-092</span>
+</div>
+<div class="bg-surface-tint/10 text-surface-tint px-3 py-1 rounded-full font-label-bold text-[10px] border border-surface-tint/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Selesai
+                        </div>
+</div>
+<div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+<img alt="Steam Wallet Code" class="w-24 h-24 object-cover rounded-lg shadow-sm" data-alt="A clean, minimalist 3D rendering of a generic gift card or game voucher floating in a pristine white studio space with soft lighting and subtle blue reflections, conveying a premium digital product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfm9BeFjS4ZoTo2n7EE8wz4CRqqEV_XTIZMfZpQMxDaVkFClPBDuFT2zHYJtYl3InmxL0M73IMOywvqkw0tP2YPPPu0o_anai2sN6oMHxOa39kGFP7IncCyopTkF2Ey-ZKANbSj1NBGrkQBLoD3ZpIY2qENW1bu-sJP_p6rLoY6qGqfLjKiRpxd0uPImVD_4xE3kl94DZcunt9PllJ8awK7HS9YCKNqB2N0XxJk-BKc6oFb8p8RLdo">
+<div class="flex-1">
+<h3 class="font-headline-sm text-[18px] text-on-background mb-1">Steam Wallet Code IDR 250.000</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Voucher Digital</p>
+<p class="font-label-md text-label-md text-outline">2 x Rp 255.000</p>
+</div>
+<div class="text-left md:text-right w-full md:w-auto mt-4 md:mt-0 flex flex-col md:items-end justify-between h-full">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Total Belanja</p>
+<p class="font-headline-md text-headline-md text-primary">Rp 510.000</p>
+</div>
+<div class="mt-4 flex gap-3">
+<button class="px-6 py-2 bg-primary-fixed text-on-primary-fixed rounded-lg font-label-bold text-label-bold hover:brightness-95 transition-all">Beli Lagi</button>
+<button class="px-4 py-2 border border-outline text-on-surface-variant rounded-lg font-label-bold text-label-bold hover:bg-surface-container-low transition-all">Ulas</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Dikirim -->
+<div class="glass-panel rounded-xl border border-outline-variant/20 ambient-shadow ambient-shadow-hover p-6 opacity-75">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 pb-4 border-b border-outline-variant/20 gap-4">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline">storefront</span>
+<span class="font-label-bold text-label-bold text-on-surface">Hardware Haven</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">15 Mei 2024</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-outline font-mono text-xs">TRX-20240415-044</span>
+</div>
+<div class="bg-primary-fixed/30 text-primary-fixed-dim px-3 py-1 rounded-full font-label-bold text-[10px] border border-primary-fixed-dim/20 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span> Dikirim
+                        </div>
+</div>
+<div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+<img alt="Pro Gaming Mouse" class="w-24 h-24 object-cover rounded-lg shadow-sm" data-alt="A high-quality product shot of a premium, ergonomic gaming mouse with subtle RGB lighting resting on a sleek dark surface. The lighting is studio-quality, highlighting the matte finish and modern curves of the hardware." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS6K7LE7gvsHJLWPYyYjhYcxLTPmZYxdtQXA81FvKMuOWQGwRpjYZ4zlyylAWGzhaNEj_BEtY-A4LvysddddLsYdGn58yXhJ4IA43_IJCffTp_lxqiaja5TlWrC3Vke9gdssHur19IOr1LuJz7godsQWW1MrKKSg4tD0XiANkkOMf6qLWYGHSPsJFTKNufp6axLIt-NcqoDlixv7T59mOqG6WxKKArtp1_voEL5hkTlGHcmOSrT2ne">
+<div class="flex-1">
+<h3 class="font-headline-sm text-[18px] text-on-background mb-1">Nexus Pro Elite Gaming Mouse</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Aksesoris Fisik - Hitam</p>
+<p class="font-label-md text-label-md text-outline">1 x Rp 850.000</p>
+</div>
+<div class="text-left md:text-right w-full md:w-auto mt-4 md:mt-0 flex flex-col md:items-end justify-between h-full">
+<div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-1">Total Belanja</p>
+<p class="font-headline-md text-headline-md text-primary">Rp 885.000</p>
+</div>
+<div class="mt-4 flex gap-3">
+<button class="px-6 py-2 bg-secondary text-white rounded-lg font-label-bold text-label-bold hover:brightness-110 transition-all shadow-sm">Lacak</button>
+<button class="px-4 py-2 border border-outline text-on-surface-variant rounded-lg font-label-bold text-label-bold hover:bg-surface-container-low transition-all">Terima Pesanan</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination (Mock) -->
+<div class="mt-8 flex justify-center">
+<nav class="flex items-center gap-2">
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-outline hover:bg-surface-container-low transition-colors" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-lg bg-primary text-white flex items-center justify-center font-label-bold">1</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-bold">2</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors font-label-bold">3</button>
+<button class="w-10 h-10 rounded-lg border border-outline-variant flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-tertiary dark:bg-on-tertiary-fixed w-full mt-auto">
+<div class="w-full py-stack-lg px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm text-on-tertiary mb-4 md:mb-0">
+                    Nexus Gaming
+                </div>
+<div class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+<a class="text-tertiary-fixed-dim hover:text-white transition-colors opacity-80 hover:opacity-100 font-label-bold text-label-bold" href="#">Tentang Kami</a>
+<a class="text-tertiary-fixed-dim hover:text-white transition-colors opacity-80 hover:opacity-100 font-label-bold text-label-bold" href="#">Kebijakan Privasi</a>
+<a class="text-tertiary-fixed-dim hover:text-white transition-colors opacity-80 hover:opacity-100 font-label-bold text-label-bold" href="#">Syarat &amp; Ketentuan</a>
+<a class="text-tertiary-fixed-dim hover:text-white transition-colors opacity-80 hover:opacity-100 font-label-bold text-label-bold" href="#">Kontak</a>
+</div>
+<div class="font-body-sm text-body-sm text-tertiary-fixed-dim opacity-80">
+                    © 2024 Nexus Gaming Marketplace. All rights reserved.
+                </div>
+</div>
+</footer>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant/20 flex justify-around py-3 px-4 z-50">
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-[10px]">Dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary-container font-bold" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">receipt_long</span>
+<span class="font-label-md text-[10px]">Transaksi</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined">favorite</span>
+<span class="font-label-md text-[10px]">Favorit</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-outline" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-md text-[10px]">Akun</span>
+</a>
+</nav>
+
+
+</body></html>

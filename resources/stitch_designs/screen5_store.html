@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manajemen Toko - Nexus Gaming</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#5516be",
+                        "tertiary-fixed": "#dae2fd",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline": "#757682",
+                        "secondary": "#6b38d4",
+                        "secondary-container": "#8455ef",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#fffbff",
+                        "on-secondary-fixed": "#23005c",
+                        "on-tertiary-container": "#a4acc5",
+                        "on-tertiary-fixed": "#131b2e",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "on-primary-fixed-variant": "#264191",
+                        "tertiary-container": "#384055",
+                        "surface-tint": "#4059aa",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "on-primary-fixed": "#00164e",
+                        "surface-container-highest": "#e0e3e5",
+                        "primary-container": "#1e3a8a",
+                        "outline-variant": "#c5c5d3",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#444651",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "background": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-background": "#191c1e",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#e9ddff",
+                        "on-surface": "#191c1e",
+                        "on-primary-container": "#90a8ff",
+                        "surface": "#f7f9fb",
+                        "tertiary": "#222a3e",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-primary": "#b6c4ff",
+                        "surface-bright": "#f7f9fb",
+                        "surface-variant": "#e0e3e5",
+                        "primary-fixed": "#dce1ff",
+                        "primary": "#00236f",
+                        "surface-dim": "#d8dadc",
+                        "on-error-container": "#93000a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "margin-desktop": "40px",
+                        "stack-sm": "4px",
+                        "stack-lg": "24px",
+                        "gutter": "24px",
+                        "stack-md": "12px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-bold": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 35, 111, 0.05);
+        }
+        .modal-overlay {
+            backdrop-filter: blur(8px);
+        }
+        /* Custom Scrollbar for products grid on mobile */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased overflow-x-hidden flex h-screen">
+<!-- SideNavBar (Shared Component) -->
+<aside class="bg-surface-container h-screen w-64 fixed left-0 top-0 shadow-md flex flex-col gap-stack-md py-stack-lg border-r border-outline-variant/20 z-40 hidden md:flex">
+<!-- Brand Logo / Header -->
+<div class="px-margin-desktop mb-stack-lg">
+<h1 class="font-headline-sm text-headline-sm text-primary">Nexus Gaming</h1>
+</div>
+<!-- User Info -->
+<div class="px-4 mb-stack-md flex items-center gap-3">
+<img alt="Gaming Profile Avatar" class="w-12 h-12 rounded-full object-cover border-2 border-primary-container" data-alt="A clean, modern avatar illustration for a gaming marketplace seller. It features a stylized character portrait with subtle tech accents, set against a vibrant blue and purple background. The style is sharp, professional, and consistent with a high-end gaming aesthetic, avoiding overly complex details to remain clear at small sizes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7mebbqUX5HtXN2r8Uugk4vXSU4MyXo7a69b1RhyguX9jm2cQvPYoSE4QFdU72Q_3jJ6ohSYQB1qDC9iiCAv6LaQmNFWr_d0Vts5WPhL7_HCTo-dGzQ3gYSWhS7y4MW4ZiLZG3rrh1fbxDGiX-gI_93DCepdmlTkgDpWiDqq6ZA3BHR9GsNxR4y2zf2NlobJ8-KhHlRODFcV8K-47xbaCRUDwOpyglQk6IlF3Ot7L7n0KAZsDVWx1D"/>
+<div>
+<p class="font-label-md text-label-md font-bold text-on-surface">Halo, Gamers!</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Level 24 Member</p>
+</div>
+</div>
+<div class="px-4 mb-stack-lg">
+<button class="w-full bg-surface-container-high hover:bg-surface-container-highest transition-colors text-primary font-label-md text-label-md py-2 rounded-lg border border-outline-variant/50">
+                Upgrade VIP
+            </button>
+</div>
+<!-- Navigation Links -->
+<nav class="flex-1 px-2 space-y-1">
+<a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-highest transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+<span class="font-label-md text-label-md">Favorit</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-highest transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">receipt_long</span>
+<span class="font-label-md text-label-md">Transaksi</span>
+</a>
+<!-- ACTIVE STATE: Semantic Mapping -> Toko Saya maps to Akun/Profile area logically for a seller, but let's assume it's a dedicated tab for sellers or sits under Akun. The prompt asks for "Toko Saya" as the active menu item. Since the JSON only provides Favorit, Transaksi, Bantuan, Akun, we will add Toko Saya and make it active based on instruction. -->
+<a class="bg-secondary-container text-on-secondary-container flex items-center gap-3 px-4 py-3 rounded-xl active:scale-98 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">storefront</span>
+<span class="font-label-md text-label-md">Toko Saya</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-highest transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help</span>
+<span class="font-label-md text-label-md">Bantuan</span>
+</a>
+<a class="text-on-surface-variant flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-highest transition-all active:scale-98" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-md text-label-md">Akun</span>
+</a>
+</nav>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 relative overflow-y-auto w-full">
+<!-- Store Header Banner -->
+<div class="relative w-full h-48 md:h-64 bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center w-full h-full opacity-80 mix-blend-overlay" data-alt="A wide, sweeping digital banner showcasing a futuristic, high-tech gaming environment. The scene features glowing neon geometric structures, deep shadows, and intense blue and purple accents, creating a premium, modern aesthetic suitable for a high-end gaming store profile. The lighting is dramatic but clean, avoiding clutter." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAGZingVUReuDtUNhpKw_Sd3cbmbmG1_O5mUDu5yHmQPZPgvuvS001uy9Y3OBi7Yfu5wLUD1cZq2BeWMIzk0b0czz31e7mjsTAvsmJQZwxPPA-TzzUc0Q6SvhUvh8mr0X8-dHyTxduQkqG7nd0xmeVcAVBULo2AVQPTmzX4U0nX3A4qUsIvQEi7BE0LX1aLgvFuj6I9KJ4oMoZc0SnJ-msBAPoFGGWxsqLZCdy9mU-fz0tEIHHlQVo')"></div>
+<!-- Gradient overlay for text readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent"></div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop -mt-16 md:-mt-24 relative z-10">
+<!-- Store Profile Details -->
+<div class="flex flex-col md:flex-row items-start md:items-end gap-stack-lg mb-stack-lg">
+<div class="relative">
+<img alt="Store Avatar" class="w-24 h-24 md:w-32 md:h-32 rounded-xl object-cover border-4 border-surface shadow-md bg-white" data-alt="A bold, professional store logo featuring a stylized neon letterform or abstract emblem. The design uses a vibrant purple and deep blue color palette, set against a pristine white background. It exudes modernity, trust, and high performance, fitting perfectly within a clean, tech-forward gaming marketplace UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnXLEmZ0xZGzHA6VIZJQDyYa7e-ABc0WEmzS0Pq9uNXIBTSqk0tWc9FsimbNYA_mvoSA4-NDIca1MhV_CtwjSlKR1yEzxlXSkBe931IXZuG_X9Lpsyr6TtftqIWfg1d2GWswW8m9mVxpWCImPRKCrdgfjwQyNL8WCdQv6nvoTtsK_f1quROx9wlTTa1otUHgRvAf3U67wTT-MOk53eQIYuhd7S26YjZ3V1Wi3_cih4cTI5SiCb0-BE"/>
+<div class="absolute -bottom-2 -right-2 bg-secondary text-on-secondary w-8 h-8 rounded-full flex items-center justify-center border-2 border-surface" title="Verified Seller">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex-1 bg-surface/80 backdrop-blur-sm p-4 rounded-xl">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="font-display-lg-mobile md:font-headline-md text-display-lg-mobile md:text-headline-md text-on-surface mb-1">Neon Pro Store</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mb-2">Pusat perlengkapan gaming premium dan akun sultan. Terpercaya sejak 2021 dengan pengiriman instan.</p>
+<div class="flex items-center gap-2">
+<div class="flex text-secondary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0.5;">star_half</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">4.9 (120 Ulasan)</span>
+</div>
+</div>
+<!-- Seller Actions -->
+<div class="flex gap-3 w-full md:w-auto">
+<button class="flex-1 md:flex-none bg-surface-container border border-outline-variant hover:bg-surface-container-highest text-on-surface font-label-md text-label-md px-4 py-2 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+                                Pengaturan
+                            </button>
+<button class="flex-1 md:flex-none bg-primary hover:brightness-110 text-on-primary font-label-md text-label-md px-6 py-2 rounded-lg shadow-sm transition-all flex items-center justify-center gap-2" id="add-product-btn">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">add</span>
+                                Tambah Barang Baru
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Management Section -->
+<div class="mb-stack-lg">
+<div class="flex items-center justify-between mb-stack-md">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Katalog Produk</h3>
+<!-- Filters/Sort -->
+<div class="flex gap-2">
+<select class="bg-surface-container border-none rounded-lg text-body-sm font-body-sm text-on-surface-variant focus:ring-primary focus:border-primary px-3 py-2">
+<option>Semua Kategori</option>
+<option>Item</option>
+<option>Akun</option>
+<option>Top Up</option>
+</select>
+</div>
+</div>
+<!-- Product Grid (Bento/Card Style) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter pb-stack-lg">
+<!-- Product Card 1 -->
+<div class="glass-card rounded-xl overflow-hidden group hover:-translate-y-1 transition-transform duration-200 flex flex-col h-full bg-surface-lowest">
+<div class="relative aspect-[16/9] w-full overflow-hidden bg-surface-container-highest">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="A high-quality 3D render of a glowing, mythical sword resting on a dark stone pedestal. The sword emanates a vibrant purple and bright blue aura, highlighting its intricate, high-tech detailing. The lighting is dramatic and focused, creating a premium gaming asset aesthetic perfect for a clean, modern marketplace UI." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNhYT0E6nxpFFvoqcOJEaB2Xop2Mapfo4Pj5-B73z3d76z-SyBTn1Thc-kAAurfK0qyWFOcILsOLgpGULGF4CbGB4EpYCsXBeHCQVKGBeTecuUWHvRUvjkw_P4QSHzJyqeYd77zPLztEsX3qTWRY5E7lKw1Dekz0RNEA-Y552zq63bVKKRX2L3DYr2xVK0ba6eq8CHHpEyiQJzcxMBYxLIgT7ep42RFy5B6eIxKvIbjzWUZiU0gqhn"/>
+<div class="absolute top-2 left-2 bg-secondary/90 text-white font-label-bold text-label-bold px-2 py-1 rounded-md backdrop-blur-sm">
+                                Item
+                            </div>
+<div class="absolute top-2 right-2 bg-surface/90 text-on-surface font-label-bold text-[10px] px-2 py-1 rounded-md backdrop-blur-sm flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+                                Tersedia
+                            </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h4 class="font-body-md text-body-md font-bold text-on-surface mb-1 line-clamp-2">Excalibur Void Blade - Server Asia</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">Senjata legendary dengan status max. Pengiriman via trade in-game.</p>
+<div class="flex items-end justify-between mt-auto pt-2 border-t border-outline-variant/20">
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant">Harga</p>
+<p class="font-headline-sm text-headline-sm text-primary">Rp 450.000</p>
+</div>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-highest flex items-center justify-center text-on-surface-variant transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">edit</span>
+</button>
+<button class="w-8 h-8 rounded bg-error-container hover:bg-error/20 flex items-center justify-center text-on-error-container transition-colors" title="Hapus">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="glass-card rounded-xl overflow-hidden group hover:-translate-y-1 transition-transform duration-200 flex flex-col h-full bg-surface-lowest">
+<div class="relative aspect-[16/9] w-full overflow-hidden bg-surface-container-highest">
+<img alt="Product Image" class="w-full h-full object-cover" data-alt="A sleek, futuristic user interface panel showing high-level gaming account statistics. The panel displays glowing numbers, dynamic charts, and holographic avatars in shades of deep blue and vibrant cyan against a dark, minimalist background. The style is highly polished, modern, and aligned with a premium tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe8G5f-SSP_TdSB_CNUGPB0yFP0igtvN0jNEVglK-uV_KO8EQ1s1TFG4PigADNowIP7PbhIF5drMy0xVFjZZM5DoPbCj__aIOhb8tVuVg9tyso-ohNm3CdJRWCgy_N22ccZOjC6s2XM2wddHoasaFf9ly_GEIWBbQFaVeeP9EQD9sRjvxcdBA8Xaaq_6qs-sC-QGxjtOM3d2HJ-cl22L2DsigCKEGyN3LgrwTxFrmgcKvviC4UbHEJ"/>
+<div class="absolute top-2 left-2 bg-primary/90 text-white font-label-bold text-label-bold px-2 py-1 rounded-md backdrop-blur-sm">
+                                Akun
+                            </div>
+<div class="absolute top-2 right-2 bg-surface/90 text-on-surface font-label-bold text-[10px] px-2 py-1 rounded-md backdrop-blur-sm flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+                                Stok Habis
+                            </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h4 class="font-body-md text-body-md font-bold text-on-surface mb-1 line-clamp-2">Akun Sultan Level 99 - Full Skin</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">Akun pribadi, winrate 75%, full skin epic. Login via email utama.</p>
+<div class="flex items-end justify-between mt-auto pt-2 border-t border-outline-variant/20">
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant">Harga</p>
+<p class="font-headline-sm text-headline-sm text-primary">Rp 2.500.000</p>
+</div>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-highest flex items-center justify-center text-on-surface-variant transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">edit</span>
+</button>
+<button class="w-8 h-8 rounded bg-error-container hover:bg-error/20 flex items-center justify-center text-on-error-container transition-colors" title="Hapus">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="glass-card rounded-xl overflow-hidden group hover:-translate-y-1 transition-transform duration-200 flex flex-col h-full bg-surface-lowest">
+<div class="relative aspect-[16/9] w-full overflow-hidden bg-surface-container-highest flex items-center justify-center">
+<div class="w-full h-full bg-gradient-to-br from-primary-container to-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-6xl opacity-50" style="font-variation-settings: 'FILL' 1;">paid</span>
+</div>
+<div class="absolute top-2 left-2 bg-on-tertiary-fixed text-tertiary-fixed font-label-bold text-label-bold px-2 py-1 rounded-md backdrop-blur-sm">
+                                Top Up
+                            </div>
+<div class="absolute top-2 right-2 bg-surface/90 text-on-surface font-label-bold text-[10px] px-2 py-1 rounded-md backdrop-blur-sm flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-[#10B981]"></span>
+                                Tersedia
+                            </div>
+</div>
+<div class="p-4 flex flex-col flex-grow">
+<h4 class="font-body-md text-body-md font-bold text-on-surface mb-1 line-clamp-2">Top Up 5000 Nexus Gems Instan</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-grow">Proses kilat 1-5 menit. Cukup cantumkan User ID.</p>
+<div class="flex items-end justify-between mt-auto pt-2 border-t border-outline-variant/20">
+<div>
+<p class="font-label-bold text-label-bold text-on-surface-variant">Harga</p>
+<p class="font-headline-sm text-headline-sm text-primary">Rp 125.000</p>
+</div>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded bg-surface-container hover:bg-surface-container-highest flex items-center justify-center text-on-surface-variant transition-colors" title="Edit">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">edit</span>
+</button>
+<button class="w-8 h-8 rounded bg-error-container hover:bg-error/20 flex items-center justify-center text-on-error-container transition-colors" title="Hapus">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 0;">delete</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer (Shared Component) - Suppressed per rules: SideNav is present, but Footer is part of the blueprint. We will include it at the bottom. -->
+<footer class="w-full bg-tertiary dark:bg-on-tertiary-fixed py-stack-lg px-margin-desktop flex flex-col md:flex-row justify-between items-center max-w-container-max mx-auto border-t border-outline-variant/10">
+<div class="mb-4 md:mb-0 text-center md:text-left">
+<span class="font-headline-sm text-headline-sm text-on-tertiary">Nexus Gaming</span>
+<p class="font-body-sm text-body-sm text-tertiary-fixed-dim mt-1">© 2024 Nexus Gaming Marketplace. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="font-label-bold text-label-bold text-tertiary-fixed-dim hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">Tentang Kami</a>
+<a class="font-label-bold text-label-bold text-tertiary-fixed-dim hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">Kebijakan Privasi</a>
+<a class="font-label-bold text-label-bold text-tertiary-fixed-dim hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">Syarat &amp; Ketentuan</a>
+<a class="font-label-bold text-label-bold text-tertiary-fixed-dim hover:text-white transition-colors opacity-80 hover:opacity-100" href="#">Kontak</a>
+</div>
+</footer>
+</main>
+<!-- Add Product Modal (Hidden by default) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center hidden" id="add-modal">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-on-background/40 modal-overlay" id="add-modal-backdrop"></div>
+<!-- Modal Content -->
+<div class="bg-surface rounded-xl shadow-2xl w-full max-w-2xl max-h-[921px] overflow-y-auto relative z-10 m-4 flex flex-col">
+<div class="p-6 border-b border-outline-variant/20 flex justify-between items-center sticky top-0 bg-surface/95 backdrop-blur z-20">
+<h3 class="font-headline-md text-headline-md text-on-surface">Tambah Barang Baru</h3>
+<button class="text-on-surface-variant hover:bg-surface-container rounded-full p-1 transition-colors" id="close-modal-btn">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="p-6 space-y-6">
+<!-- Image Upload Field -->
+<div>
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-2">Foto Produk</label>
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-8 flex flex-col items-center justify-center bg-surface-container-lowest hover:bg-surface-container-low transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-4xl text-on-surface-variant group-hover:text-primary transition-colors mb-2" style="font-variation-settings: 'FILL' 0;">cloud_upload</span>
+<p class="font-body-md text-body-md text-on-surface-variant text-center">Tarik &amp; lepas gambar di sini, atau <span class="text-primary font-bold">Pilih File</span></p>
+<p class="font-body-sm text-body-sm text-outline mt-1">Rekomendasi rasio 16:9, max 5MB.</p>
+</div>
+</div>
+<!-- Product Name -->
+<div>
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-2" for="product-name">Nama Produk</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="product-name" placeholder="Contoh: Akun Level 99 Full Skin" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Category Dropdown -->
+<div>
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-2" for="product-category">Kategori</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all appearance-none" id="product-category">
+<option disabled="" selected="" value="">Pilih Kategori</option>
+<option value="item">Item</option>
+<option value="akun">Akun</option>
+<option value="topup">Top Up</option>
+</select>
+</div>
+<!-- Price Input -->
+<div>
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-2" for="product-price">Harga (Rp)</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 font-body-md text-on-surface-variant">Rp</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg pl-10 pr-4 py-3 font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" id="product-price" placeholder="0" type="number"/>
+</div>
+</div>
+</div>
+<!-- Description -->
+<div>
+<label class="block font-label-md text-label-md font-bold text-on-surface mb-2" for="product-desc">Deskripsi Produk</label>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-4 py-3 font-body-md text-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all resize-none" id="product-desc" placeholder="Jelaskan detail produk, cara pengiriman, dan garansi (jika ada)..." rows="4"></textarea>
+</div>
+</div>
+<div class="p-6 border-t border-outline-variant/20 flex justify-end gap-3 bg-surface-container-lowest sticky bottom-0 rounded-b-xl z-20">
+<button class="px-6 py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container transition-colors" id="cancel-modal-btn">Batal</button>
+<button class="bg-primary hover:brightness-110 text-on-primary font-label-md text-label-md px-6 py-2 rounded-lg shadow-sm transition-all">Simpan Produk</button>
+</div>
+</div>
+</div>
+<!-- Script for Modal Interaction -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('add-modal');
+            const openBtn = document.getElementById('add-product-btn');
+            const closeBtn = document.getElementById('close-modal-btn');
+            const cancelBtn = document.getElementById('cancel-modal-btn');
+            const backdrop = document.getElementById('add-modal-backdrop');
+
+            const openModal = () => {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            };
+
+            const closeModal = () => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            };
+
+            openBtn.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            cancelBtn.addEventListener('click', closeModal);
+            backdrop.addEventListener('click', closeModal);
+        });
+    </script>
+</body></html>

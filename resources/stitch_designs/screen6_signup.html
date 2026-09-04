@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign Up - Nexus Gaming</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d8dadc",
+                        "secondary-fixed": "#e9ddff",
+                        "outline-variant": "#c5c5d3",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#131b2e",
+                        "background": "#f7f9fb",
+                        "on-error": "#ffffff",
+                        "on-secondary-container": "#fffbff",
+                        "surface-container": "#eceef0",
+                        "primary": "#00236f",
+                        "on-primary-fixed-variant": "#264191",
+                        "inverse-surface": "#2d3133",
+                        "secondary-container": "#8455ef",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-background": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "primary-fixed": "#dce1ff",
+                        "inverse-primary": "#b6c4ff",
+                        "tertiary-fixed": "#dae2fd",
+                        "tertiary": "#222a3e",
+                        "surface-container-low": "#f2f4f6",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#d0bcff",
+                        "on-primary-container": "#90a8ff",
+                        "error": "#ba1a1a",
+                        "primary-container": "#1e3a8a",
+                        "on-secondary-fixed": "#23005c",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "outline": "#757682",
+                        "on-secondary-fixed-variant": "#5516be",
+                        "on-surface-variant": "#444651",
+                        "on-error-container": "#93000a",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#6b38d4",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#4059aa",
+                        "on-primary-fixed": "#00164e",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-container": "#a4acc5",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "tertiary-container": "#384055",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-md": "12px",
+                        "stack-sm": "4px",
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "container-max": "1280px",
+                        "stack-lg": "24px",
+                        "gutter": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-bold": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 35, 111, 0.05);
+        }
+        .input-glow:focus {
+            box-shadow: 0 0 0 3px rgba(0, 35, 111, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background min-h-screen flex flex-col font-body-md text-on-background antialiased relative overflow-hidden">
+<!-- Background Decor elements -->
+<div class="absolute inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute -top-[20%] -right-[10%] w-[50vw] h-[50vw] rounded-full bg-secondary-fixed/20 blur-[120px]"></div>
+<div class="absolute -bottom-[20%] -left-[10%] w-[40vw] h-[40vw] rounded-full bg-primary-fixed/20 blur-[100px]"></div>
+</div>
+<!-- Main Content Area (Transactional - No Global Nav/Footer) -->
+<main class="flex-grow flex items-center justify-center p-margin-mobile md:p-margin-desktop z-10 relative">
+<div class="w-full max-w-[480px]">
+<!-- Logo/Brand Identity -->
+<div class="text-center mb-stack-lg">
+<a class="inline-block group" href="#">
+<span class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg tracking-tighter text-primary dark:text-inverse-primary group-hover:opacity-80 transition-opacity">Nexus Gaming</span>
+</a>
+<p class="font-body-md text-body-md text-on-surface-variant mt-stack-sm">The Ultimate Pro Marketplace</p>
+</div>
+<!-- Sign Up Card -->
+<div class="glass-panel rounded-xl p-stack-lg md:p-[32px]">
+<div class="mb-stack-lg">
+<h1 class="font-headline-md text-headline-md text-on-surface mb-stack-sm">Buat Akun Baru</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bergabunglah dengan ribuan pro gamer lainnya.</p>
+</div>
+<form action="#" class="space-y-stack-md" method="POST">
+<!-- Nama Akun -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-stack-sm" for="name">Nama Akun</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">person</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface font-body-md text-body-md rounded-lg py-3 pl-10 pr-4 focus:outline-none focus:border-primary input-glow transition-all" id="name" name="name" placeholder="GamerTag Anda" required="" type="text"/>
+</div>
+</div>
+<!-- Email -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-stack-sm" for="email">Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">mail</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface font-body-md text-body-md rounded-lg py-3 pl-10 pr-4 focus:outline-none focus:border-primary input-glow transition-all" id="email" name="email" placeholder="email@contoh.com" required="" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-stack-sm" for="password">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">lock</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface font-body-md text-body-md rounded-lg py-3 pl-10 pr-4 focus:outline-none focus:border-primary input-glow transition-all" id="password" name="password" placeholder="Min. 8 karakter" required="" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Konfirmasi Password -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface mb-stack-sm" for="confirm_password">Konfirmasi Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[20px]">lock_reset</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant text-on-surface font-body-md text-body-md rounded-lg py-3 pl-10 pr-4 focus:outline-none focus:border-primary input-glow transition-all" id="confirm_password" name="confirm_password" placeholder="Ulangi password" required="" type="password"/>
+</div>
+</div>
+<!-- T&C Checkbox -->
+<div class="flex items-start mt-stack-md">
+<div class="flex items-center h-5">
+<input class="w-4 h-4 text-primary bg-surface-container-lowest border-outline-variant rounded focus:ring-primary focus:ring-2" id="terms" name="terms" required="" type="checkbox"/>
+</div>
+<label class="ml-2 font-body-sm text-body-sm text-on-surface-variant" for="terms">
+                            Saya setuju dengan <a class="text-primary hover:underline font-medium" href="#">Syarat &amp; Ketentuan</a> serta <a class="text-primary hover:underline font-medium" href="#">Kebijakan Privasi</a> Nexus Gaming.
+                        </label>
+</div>
+<!-- Submit Button -->
+<div class="pt-stack-sm">
+<button class="w-full bg-primary hover:bg-primary/90 text-on-primary font-label-bold text-label-bold py-3 px-4 rounded-lg flex items-center justify-center transition-colors shadow-sm hover:shadow-md active:scale-[0.98]" type="submit">
+                            Daftar Akun
+                            <span class="material-symbols-outlined ml-2 text-[18px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Divider -->
+<div class="mt-stack-lg mb-stack-md flex items-center">
+<div class="flex-grow border-t border-outline-variant/50"></div>
+<span class="mx-4 font-body-sm text-body-sm text-on-surface-variant">atau</span>
+<div class="flex-grow border-t border-outline-variant/50"></div>
+</div>
+<!-- Social Login -->
+<button class="w-full bg-surface-container-lowest hover:bg-surface-container-low border border-outline-variant text-on-surface font-label-bold text-label-bold py-3 px-4 rounded-lg flex items-center justify-center transition-colors" type="button">
+<svg class="w-5 h-5 mr-3" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
+                    Daftar dengan Google
+                </button>
+<!-- Login Link -->
+<p class="mt-stack-lg text-center font-body-sm text-body-sm text-on-surface-variant">
+                    Sudah punya akun? <a class="text-primary hover:text-secondary font-label-bold text-label-bold hover:underline transition-colors" href="#">Login di sini</a>
+</p>
+</div>
+</div>
+</main>
+</body></html>
